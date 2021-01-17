@@ -16,8 +16,8 @@ bot.on("message", async message => {
     let args = messageArray.slice(1);
     
 
-    if(cmd === `${prefix}command goes here`){
-        return message.reply("reply goes here")
+    if(cmd === `${prefix}ping`){
+        return message.reply("This message had a ping of something seconds")
     }
 
 })
