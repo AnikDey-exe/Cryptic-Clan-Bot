@@ -20,6 +20,10 @@ bot.on("message", async message => {
         return message.reply("This message had a ping of something seconds")
     }
 
+    if(cmd === `${prefix}`+'topic'){
+        return message.reply("Stay on topic and don't post explicit content guys!")
+    }
+
 })
 
 bot.login(process.env.token);
