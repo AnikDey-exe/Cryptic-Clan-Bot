@@ -31,7 +31,7 @@ bot.on("message", async message => {
     let command = botsettings.command;
     
 
-    if(cmd === `${prefix}`+`${command}`){
+    if(cmd === `${prefix}`+'topic'){
         return message.reply("Remember to stay on topic and don't post explicit content!")
     }
 })
