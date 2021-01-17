@@ -19,11 +19,20 @@ bot.on("message", async message => {
     if(cmd === `${prefix}`+'ping'){
         return message.reply("This message had a ping of something seconds")
     }
+})
+
+bot.on("message", async message => {
+    if(message.author.bot || message.channel.type === "dm") return;
+
+    let prefix = botsettings.prefix;
+    let messageArray = message.content.split(" ")
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    
 
     if(cmd === `${prefix}`+'topic'){
-        return message.reply("Stay on topic and don't post explicit content guys!")
+        return message.reply("This message had a ping of something seconds")
     }
-
 })
 
 bot.login(process.env.token);
