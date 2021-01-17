@@ -60,11 +60,10 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
     let command = botsettings.command;
-    let randNum;
     
 
     if(cmd === `${prefix}`+'gay'){
-        randNum = random(1,2);
+        let randNum = random(1,2);
         if(randNum === 1){
             return message.reply("You are not gay!");
         }
