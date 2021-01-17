@@ -67,5 +67,21 @@ bot.on("message", async message => {
     }
 })
 
+bot.on("message", async message => {
+    if(message.author.bot || message.channel.type === "dm") return;
+
+    let prefix = botsettings.prefix;
+    let messageArray = message.content.split(" ")
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let command = botsettings.command;
+    
+
+    if(cmd === `${prefix}`+'life'){
+        return message.reply("We all live and death is alwaya lurking nearby us. Treat everyday like the last day because you never know when fate will let you perish...");
+    }
+})
+
+
 
 bot.login(process.env.token);
