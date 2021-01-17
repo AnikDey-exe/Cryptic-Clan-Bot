@@ -47,7 +47,7 @@ bot.on("message", async message => {
     
 
     if(cmd === `${prefix}`+'help'){
-        return message.reply("Use ^ for the prefix. Try commands such as ping and topic!")
+        return message("Use ^ for the prefix. Try commands such as ping and topic!")
     }
 })
 
