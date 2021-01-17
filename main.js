@@ -32,7 +32,7 @@ bot.on("message", async message => {
     
 
     if(cmd === `${prefix}`+'topic'){
-        return message("Remember to stay on topic and don't post explicit content!")
+        return message.reply("Remember to stay on topic and don't post explicit content!")
     }
 })
 
