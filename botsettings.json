@@ -1,4 +1,4 @@
 {
     "prefix": "^",
-    "command1": "topic"
+    "command": "topic"
 }
