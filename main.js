@@ -51,4 +51,28 @@ bot.on("message", async message => {
     }
 })
 
+
+bot.on("message", async message => {
+    if(message.author.bot || message.channel.type === "dm") return;
+
+    let prefix = botsettings.prefix;
+    let messageArray = message.content.split(" ")
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let command = botsettings.command;
+    let randNum;
+    
+
+    if(cmd === `${prefix}`+'gay'){
+        randNum = rand(1,2);
+        if(randNum === 1){
+            return message.reply("You are not gay!");
+        }
+        else{
+            return message.reply("You are not gay!");
+        }
+    }
+})
+
+
 bot.login(process.env.token);
