@@ -21,7 +21,7 @@ bot.on("message", async message => {
     }
 })
 
-bot.on("message1", async message => {
+bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
 
     let prefix = botsettings.prefix;
