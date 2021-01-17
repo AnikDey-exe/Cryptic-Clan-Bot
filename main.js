@@ -28,11 +28,11 @@ bot.on("message", async message => {
     let messageArray = message.content.split(" ")
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-    let command = botsettings.command;
+    let command = botsettings.command1;
     
 
     if(cmd === `${prefix}`+`${command}`){
-        return message.reply("This message had a ping of something seconds")
+        return message.reply("Remember to stay on topic and don't post explicit content!")
     }
 })
 
