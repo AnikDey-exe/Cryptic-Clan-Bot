@@ -24,13 +24,13 @@ bot.on("message", async message => {
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
 
-    let prefix = botsettings.prefix;
+    let prefix = '^';
     let messageArray = message.content.split(" ")
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
     
 
-    if(cmd === `${prefix}`+'add'){
+    if(cmd === {prefix}+'add'){
         return message.reply("This message had a ping of something seconds")
     }
 })
