@@ -59,14 +59,12 @@ bot.on("message", async message => {
         }
     }
 
-    var hasRegistered = false;
-
     if(cmd === `${prefix}`+'start'){
+        var hasRegistered = true;
         return message.reply("Successfully registered!");
-        hasRegistered = true;
     }
 
-    if(cmd === `${prefix}`+'rob' && hasRegistered === false){
+    if(cmd === `${prefix}`+'rob' && hasRegistered !== false){
         return message.reply("You haven't registered yet; use ^start to register.");
     }
     else if(cmd === `${prefix}`+'rob' && hasRegistered === true){
