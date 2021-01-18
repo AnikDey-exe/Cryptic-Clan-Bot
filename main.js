@@ -78,7 +78,7 @@ bot.on("message", async message => {
         return message.reply("You haven't registered yet; use ^start to register.");
     }
     else if(cmd === `${prefix}`+'heist' && hasRegistered === true){
-        return message.reply("You have robbed the bank!")
+        return message.reply("You have robbed the bank!");
     }
 })
 
