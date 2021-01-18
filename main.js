@@ -102,8 +102,9 @@ bot.on("message", async message => {
 
     if(cmd === `${prefix}`+'rich'){
         var rand = getRandomInt1();
+        var money = getRandomInt2();
         if(rand == 1){
-            return message.reply("You are rich at a net worth of $"+rand+"!");
+            return message.reply("You are rich at a net worth of $"+money+"!");
         }
         else if(rand == 2){
             return message.reply("You are broke!")
