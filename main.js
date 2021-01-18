@@ -72,6 +72,9 @@ bot.on("message", async message => {
     else if(cmd === `${prefix}`+'rob' && hasRegistered === true){
         return message.reply("You have robbed the bank!")
     }
+    else {
+        return message.reply("Unable to identify :(")
+    }
 })
 
 function getRandomInt1(min, max) {
