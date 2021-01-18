@@ -59,7 +59,7 @@ bot.on("message", async message => {
         }
     }
 
-    if(cmd === `${prefix}`+'rob'+'bank') {
+    if(cmd === `${prefix}`+'rob'+' bank') {
         var rand = getRandomInt1();
         var money = getRandomInt3();
         if(rand == 1){
@@ -69,7 +69,7 @@ bot.on("message", async message => {
             return message.reply("The cops have caught you and you are in custody! Get good next time amateur.");
         }
         else {
-            return message.reply("Unable to identify :(");
+            return message.reply("Unable to identify :( Please specify.");
         }
     }
 
