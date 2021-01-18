@@ -19,6 +19,20 @@ bot.on("message", async message => {
     if(cmd === `${prefix}`+'ping'){
         return message.reply("This message had a ping of something seconds")
     }
+
+    if(cmd === `${prefix}`+'rich'){
+        var rand = getRandomInt1();
+        var money = getRandomInt2();
+        if(rand == 1){
+            return message.reply("You are rich at a net worth of $"+money+"!");
+        }
+        else if(rand == 2){
+            return message.reply("You are broke!")
+        }
+        else {
+            return message.reply("Net worth not found :(")
+        }
+    }
 })
 
 bot.on("message", async message => {
@@ -99,20 +113,6 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
     let command = botsettings.command;
-
-    if(cmd === `${prefix}`+'rich'){
-        var rand = getRandomInt1();
-        var money = getRandomInt2();
-        if(rand == 1){
-            return message.reply("You are rich at a net worth of $"+money+"!");
-        }
-        else if(rand == 2){
-            return message.reply("You are broke!")
-        }
-        else {
-            return message.reply("Net worth not found :(")
-        }
-    }
 })
 
 function getRandomInt1(min, max) {
