@@ -54,9 +54,6 @@ bot.on("message", async message => {
         else if(rand == 2){
             return message.reply("You are not gay!");
         }
-        else {
-            return message.reply("Unable to identify :(");
-        }
     }
 
     if(cmd === `${prefix}`+'rob'+'bank') {
@@ -67,9 +64,6 @@ bot.on("message", async message => {
         }
         else if(rand == 2){
             return message.reply("The cops have caught you and you are in custody! Get good next time amateur.");
-        }
-        else {
-            return message.reply("Unable to identify :( Please specify.");
         }
     }
 
@@ -85,9 +79,6 @@ bot.on("message", async message => {
     }
     else if(cmd === `${prefix}`+'heist' && hasRegistered === true){
         return message.reply("You have robbed the bank!")
-    }
-    else {
-        return message.reply("Unable to identify :(")
     }
 })
 
