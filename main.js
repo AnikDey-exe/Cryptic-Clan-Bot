@@ -71,6 +71,9 @@ bot.on("message", async message => {
         else if(rand == 2){
             return message.reply("You are not gay!");
         }
+        else {
+            return message.reply("Unable to identify :(");
+        }
     }
 })
 
@@ -90,7 +93,7 @@ bot.on("message", async message => {
 
 function getRandomInt(min, max) {
     min = Math.ceil(1);
-    max = Math.floor(2);
+    max = Math.floor(3);
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
 
