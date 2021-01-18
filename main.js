@@ -71,6 +71,7 @@ bot.on("message", async message => {
             return message.reply("You are not gay!");
         }
     }
+    console.log(rand);
 })
 
 bot.on("message", async message => {
