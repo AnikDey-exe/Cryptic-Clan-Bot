@@ -59,17 +59,31 @@ bot.on("message", async message => {
         }
     }
 
-    var hasRegistered = false;
+    if(cmd === `${prefix}`+'rob'+'bank') {
+        var rand = getRandomInt1();
+        var money = getRandomInt3();
+        if(rand == 1){
+            return message.reply("You success fully robbed the museum with a take of $"+money+"!")
+        }
+        else if(rand == 2){
+            return message.reply("The cops have caught you and you are in custody! Get good next time amateur.");
+        }
+        else {
+            return message.reply("Unable to identify :(");
+        }
+    }
+
+    let hasRegistered = false;
     console.log(hasRegistered);
     if(cmd === `${prefix}`+'start'){
         hasRegistered = true;
         return message.reply("Successfully registered!");
     }
 
-    if(cmd === `${prefix}`+'rob' && hasRegistered === false){
+    if(cmd === `${prefix}`+'heist' && hasRegistered === false){
         return message.reply("You haven't registered yet; use ^start to register.");
     }
-    else if(cmd === `${prefix}`+'rob' && hasRegistered === true){
+    else if(cmd === `${prefix}`+'heist' && hasRegistered === true){
         return message.reply("You have robbed the bank!")
     }
     else {
@@ -86,6 +100,12 @@ function getRandomInt1(min, max) {
 function getRandomInt2(min, max) {
     min = Math.ceil(500000);
     max = Math.floor(1000000000);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
+function getRandomInt3(min, max) {
+    min = Math.ceil(100000);
+    max = Math.floor(20000000);
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
 
