@@ -56,7 +56,7 @@ bot.on("message", async message => {
         }
     }
 
-    if(cmd === `${prefix}`+'rob'+'bank') {
+    if(cmd === `${prefix}`+'rob'+''+'bank') {
         var rand = getRandomInt1();
         var money = getRandomInt3();
         if(rand == 1){
@@ -97,6 +97,12 @@ function getRandomInt2(min, max) {
 function getRandomInt3(min, max) {
     min = Math.ceil(100000);
     max = Math.floor(20000000);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
+function getRandomInt4(min, max) {
+    min = Math.ceil(1);
+    max = Math.floor(11);
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
 
