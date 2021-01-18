@@ -71,9 +71,6 @@ bot.on("message", async message => {
         else {
             return message.reply("You are not gay!");
         }
-        min = Math.ceil(1);
-        max = Math.floor(2);
-        return Math.floor(Math.random() * (max - min) + min);
     }
 })
 
