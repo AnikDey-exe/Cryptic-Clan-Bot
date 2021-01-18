@@ -103,7 +103,7 @@ bot.on("message", async message => {
     if(cmd === `${prefix}`+'rich'){
         var rand = getRandomInt1();
         if(rand == 1){
-            return message.reply("You are rich"+rand+"!");
+            return message.reply("You are rich at a net worth of $"+rand+"!");
         }
         else if(rand == 2){
             return message.reply("You are broke!")
@@ -117,6 +117,12 @@ bot.on("message", async message => {
 function getRandomInt1(min, max) {
     min = Math.ceil(1);
     max = Math.floor(3);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
+function getRandomInt2(min, max) {
+    min = Math.ceil(500000);
+    max = Math.floor(1000000000);
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
 
