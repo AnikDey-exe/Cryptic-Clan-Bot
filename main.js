@@ -58,6 +58,20 @@ bot.on("message", async message => {
             return message.reply("Unable to identify :(");
         }
     }
+
+    var hasRegistered = false;
+
+    if(cmd === `${prefix}`+'start'){
+        return message.reply("Successfully registered!");
+        hasRegistered = true;
+    }
+
+    if(cmd === `${prefix}`+'rob' && hasRegistered === false){
+        return message.reply("You haven't registered yet; use ^start to register.");
+    }
+    else if(cmd === `${prefix}`+'rob' && hasRegistered === true){
+        return message.reply("You have robbed the bank!")
+    }
 })
 
 function getRandomInt1(min, max) {
