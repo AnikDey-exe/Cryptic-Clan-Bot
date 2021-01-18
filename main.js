@@ -59,7 +59,7 @@ bot.on("message", async message => {
         }
     }
 
-    if(cmd === `${prefix}`+'rob'+' bank') {
+    if(cmd === `${prefix}`+'rob'+'bank') {
         var rand = getRandomInt1();
         var money = getRandomInt3();
         if(rand == 1){
