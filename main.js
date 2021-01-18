@@ -64,6 +64,7 @@ bot.on("message", async message => {
 
     if(cmd === `${prefix}`+'gay'){
         var rand = Math.random(1,2);
+        console.log(rand);
         if(rand == 1){
             return message.reply("You are gay!");
         }
@@ -71,7 +72,6 @@ bot.on("message", async message => {
             return message.reply("You are not gay!");
         }
     }
-    console.log(rand);
 })
 
 bot.on("message", async message => {
