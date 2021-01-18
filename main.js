@@ -63,7 +63,7 @@ bot.on("message", async message => {
         var rand = getRandomInt1();
         var money = getRandomInt3();
         if(rand == 1){
-            return message.reply("You success fully robbed the museum with a take of $"+money+"!")
+            return message.reply("You success fully robbed the bank with a take of $"+money+"!")
         }
         else if(rand == 2){
             return message.reply("The cops have caught you and you are in custody! Get good next time amateur.");
