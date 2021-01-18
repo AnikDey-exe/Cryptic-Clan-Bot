@@ -60,7 +60,7 @@ bot.on("message", async message => {
     }
 
     var hasRegistered = false;
-
+    console.log(hasRegistered);
     if(cmd === `${prefix}`+'start'){
         hasRegistered = true;
         return message.reply("Successfully registered!");
