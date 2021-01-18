@@ -63,7 +63,7 @@ bot.on("message", async message => {
     
 
     if(cmd === `${prefix}`+'gay'){
-        var rand = getRandomInt();
+        var rand = getRandomInt1();
         console.log(rand);
         if(rand == 1){
             return message.reply("You are gay!");
@@ -91,7 +91,30 @@ bot.on("message", async message => {
     }
 })
 
-function getRandomInt(min, max) {
+bot.on("message", async message => {
+    if(message.author.bot || message.channel.type === "dm") return;
+
+    let prefix = botsettings.prefix;
+    let messageArray = message.content.split(" ")
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let command = botsettings.command;
+
+    if(cmd === `${prefix}`+'rich'){
+        var rand = getRandomInt1();
+        if(rand == 1){
+            return message.reply("You are rich"+rand+"!");
+        }
+        else if(rand == 2){
+            return message.reply("You are broke!")
+        }
+        else {
+            return message.reply("Net worth not found :(")
+        }
+    }
+})
+
+function getRandomInt1(min, max) {
     min = Math.ceil(1);
     max = Math.floor(3);
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
