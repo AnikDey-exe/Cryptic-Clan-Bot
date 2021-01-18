@@ -68,7 +68,7 @@ bot.on("message", async message => {
         if(rand == 1){
             return message.reply("You are gay!");
         }
-        else if(rand == 1){
+        else if(rand == 2){
             return message.reply("You are not gay!");
         }
     }
