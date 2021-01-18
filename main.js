@@ -63,7 +63,7 @@ bot.on("message", async message => {
     
 
     if(cmd === `${prefix}`+'gay'){
-        var rand = Math.random(1,2);
+        var rand = getRandomInt();
         console.log(rand);
         if(rand == 1){
             return message.reply("You are gay!");
@@ -89,6 +89,10 @@ bot.on("message", async message => {
     }
 })
 
-
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
 
 bot.login(process.env.token);
