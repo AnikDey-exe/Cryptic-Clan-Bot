@@ -34,7 +34,7 @@ bot.on("message", async message => {
     }
 
     if(cmd === `${prefix}`+'topic'){
-        return message.reply("Remember to stay on topic and don't post explicit content!")
+        return message.channel.send("Remember to stay on topic and don't post explicit content!")
     }
 
     if(cmd === `${prefix}`+'help'){
