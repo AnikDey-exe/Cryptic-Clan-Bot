@@ -67,6 +67,40 @@ bot.on("message", async message => {
         }
     }
 
+    if(cmd === `${prefix}`+'insult'){
+        var rand = getRandomInt4();
+        if(rand === 1){
+            return message.channel.send("A most notable coward, an infinite and endless liar, an hourly promise breaker, the owner of no one good quality.");
+        }
+        else if(rand === 2){
+            return message.channel.send("Away, you starvelling, you elf-skin, you dried neat’s-tongue, bull’s-pizzle, you stock-fish!");
+        }
+        else if(rand === 3){
+            return message.channel.send("");
+        }
+        else if(rand === 4){
+            return message.channel.send("");
+        }
+        else if(rand === 5){
+            return message.channel.send("");
+        }
+        else if(rand === 6){
+            return message.channel.send("");
+        }
+        else if(rand === 7){
+            return message.channel.send("");
+        }
+        else if(rand === 8){
+            return message.channel.send("");
+        }
+        else if(rand === 9){
+            return message.channel.send("");
+        }
+        else if(rand === 10){
+            return message.channel.send("");
+        }
+    }
+
     let hasRegistered = false;
     console.log(hasRegistered);
     if(cmd === `${prefix}`+'start'){
