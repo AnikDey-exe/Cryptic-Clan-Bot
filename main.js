@@ -82,7 +82,6 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
     let command = botsettings.command;
-    
 
     if(cmd === `${prefix}`+'life'){
         return message.reply("We all live and death is always lurking nearby us. Treat everyday like the last day because you never know when fate will let you perish...");
