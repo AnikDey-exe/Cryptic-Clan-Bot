@@ -116,6 +116,12 @@ bot.on("message", async message => {
     }
 })
 
+bot.on("guildMemberAdd",member => {
+    const welcomeChannel = member.guild.channels.find(channel => channel.name === 'member-chat');
+
+    welcomeChannel.send(`Welcome to the Cryptic Clan Official Server ${member}, make sure to collect some roles at <756158085013307472>! Hope you have a great time here!`)
+})
+
 function getRandomInt1(min, max) {
     min = Math.ceil(1);
     max = Math.floor(3);
