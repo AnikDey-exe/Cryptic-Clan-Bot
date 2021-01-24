@@ -7,6 +7,18 @@ bot.on("ready", async () => {
     console.log('Cryptic Clan bot is online!');
 })
 
+bot.on("guildMemberAdd",member => {
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'partners');
+
+    welcomeChannel.send(`Welcome to the Cryptic Clan Official Server ${member}, make sure to collect some roles at <#756158085013307472>! Hope you have a great time here!`);
+})
+
+bot.on("guildMemberRemove",member => {
+    const leaveChannel = member.guild.channels.cache.find(channel => channel.name === 'member-join-log');
+
+    leaveChannel.send(`${member} has left this server :(. Not so very cash money of you, but we hope to see you again!`);
+})
+
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
 
@@ -114,18 +126,6 @@ bot.on("message", async message => {
     else if(cmd === `${prefix}`+'heist' && hasRegistered === true){
         return message.reply("You have robbed the bank!");
     }
-})
-
-bot.on("guildMemberAdd",member => {
-    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'partners');
-
-    welcomeChannel.send(`Welcome to the Cryptic Clan Official Server ${member}, make sure to collect some roles at <#756158085013307472>! Hope you have a great time here!`);
-})
-
-bot.on("guildMemberRemove",member => {
-    const leaveChannel = member.guild.channels.cache.find(channel => channel.name === 'member-join-log');
-
-    leaveChannel.send(`${member} has left this server :(. Not so very cash money of you, but we hope to see you again!`);
 })
 
 function getRandomInt1(min, max) {
