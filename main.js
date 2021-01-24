@@ -117,7 +117,7 @@ bot.on("message", async message => {
 })
 
 bot.on("guildMemberAdd",member => {
-    const welcomeChannel = member.guild.channels.find(channel => channel.name === 'member-chat');
+    const welcomeChannel = member.guild.channels.find(channel => channel.name === 'member-join-log');
 
     welcomeChannel.send(`Welcome to the Cryptic Clan Official Server ${member}, make sure to collect some roles at <756158085013307472>! Hope you have a great time here!`)
 })
