@@ -7,14 +7,8 @@ bot.on("ready", async () => {
     console.log('Cryptic Clan bot is online!');
 })
 
-bot.on("guildMemberAdd", member => {
-    const welcomeEmbed = new Discord.MessageEmbed();
-
-    welcomeEmbed.setColor('#5cf000');
-    welcomeEmbed.setTitle('**' + member.user.username + '** is now Among Us other **' + member.guild.memberCount + '** people');
-    welcomeEmbed.setImage('https://cdn.mos.cms.futurecdn.net/93GAa4wm3z4HbenzLbxWeQ-650-80.jpg.webp');
-
-    member.guild.channels.cache.find(i => i.name === 'member-join-log').send(welcomeEmbed);
+ bot.on('guildMemberAdd', member => { 
+     member.guild.channels.get('756159066564460545').send("Welcome to this server!");
 });
 
 
