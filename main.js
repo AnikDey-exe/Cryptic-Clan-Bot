@@ -8,8 +8,8 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd", member => {
-    let guild = member.guild;
-    guild.defaultChannel.sendMessage(`Welcome to our Discord Server.  Please check out the FAQ channel for documentation and support to help you get started`).catch(console.error);
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'member-join-log');
+    welcomeChannel.send (`Welcome! ${member}`);
 });
 
 
