@@ -8,7 +8,7 @@ bot.on("ready", async () => {
 })
 
  bot.on('guildMemberAdd', member => { 
-     member.guild.channels.get('756159066564460545').send("Welcome to this server!");
+     member.guild.channels.get(756159066564460545).send("Welcome to this server!");
 });
 
 
