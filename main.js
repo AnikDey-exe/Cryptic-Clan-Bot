@@ -7,8 +7,9 @@ bot.on("ready", async () => {
     console.log('Cryptic Clan bot is online!');
 })
 
- bot.on('guildMemberAdd', member => { 
-     member.guild.channels.get(756159066564460545).send("Welcome to this server!");
+bot.on("guildMemberAdd", member => {
+    let guild = member.guild;
+    guild.defaultChannel.sendMessage(`Welcome to our Discord Server.  Please check out the FAQ channel for documentation and support to help you get started`).catch(console.error);
 });
 
 
