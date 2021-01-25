@@ -8,7 +8,7 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd",member => {
-    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'partners');
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'member-join-log');
 
     welcomeChannel.send(`Welcome to the Cryptic Clan Official Server ${member}, make sure to collect some roles at <#756158085013307472>! Hope you have a great time here!`);
 })
