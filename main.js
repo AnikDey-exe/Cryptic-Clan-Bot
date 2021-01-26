@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const botsettings = require('./botsettings.json');
 
-const bot = new Discord.Client({disableEveryone: true});
+const bot = new Discord.Client;
 
 bot.on("ready", async () => {
     console.log('Cryptic Clan bot is online!');
@@ -9,6 +9,7 @@ bot.on("ready", async () => {
 
 bot.on("guildMemberAdd", member => {
     const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'member-join-log');
+
     welcomeChannel.send (`Welcome! ${member}`);
 });
 
@@ -164,6 +165,7 @@ bot.on("message", async message => {
     }
 
     if(cmd === `${prefix}`+'guess'+'_'+`${guessNumber4}`){
+        console.log(botGuessNumber);
         var botGuessNumber = getRandomInt4();
         if(guessNumber4 === botGuessNumber){
             return message.reply("Correct.");
