@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const botsettings = require('./botsettings.json');
 
-const bot = new Discord.Client;
+const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
     console.log('Cryptic Clan bot is online!');
@@ -14,10 +14,7 @@ bot.on("guildMemberAdd", member => {
 });
 
 
-bot.on("guildMemberRemove", member => {
-    const byeChannel = member.guild.channels.cache.find(channel => channel.name === 'member-join-log');
-    byeChannel.send(`Goodbye! ${member}`);
-})
+
 
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
