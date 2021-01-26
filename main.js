@@ -8,7 +8,7 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd", member => {
-    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'member-join-log');
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'member-chat');
     welcomeChannel.send (`Welcome! ${member}`);
 });
 
