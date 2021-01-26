@@ -126,7 +126,7 @@ bot.on("message", async message => {
         return message.reply("You have robbed the bank!");
     }
 
-    let guessNumber = 1;
+    let guessNumber = getRandomInt4();
 
     if(cmd === `${prefix}`+'guess'+'_'+`${guessNumber}`){
         var botGuessNumber = getRandomInt4();
