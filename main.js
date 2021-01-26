@@ -8,13 +8,16 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd", member => {
-    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'member-join-log');
+    const welcomeChannel = member.guild.channels.cache.get('756159066564460545');
 
-    welcomeChannel.send (`Welcome! ${member}`);
+    welcomeChannel.send('Welcome!');
 });
 
 
-
+bot.on("guildMemberRemove", member => {
+    const byeChannel = member.guild.channels.cache.find(channel => channel.name === 'member-join-log');
+    byeChannel.send(`Goodbye! ${member}`);
+})
 
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
