@@ -8,7 +8,7 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd", member => {
-    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'member-chat');
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'member-join-log');
     welcomeChannel.send (`Welcome! ${member}`);
 });
 
@@ -124,6 +124,18 @@ bot.on("message", async message => {
     }
     else if(cmd === `${prefix}`+'heist' && hasRegistered === true){
         return message.reply("You have robbed the bank!");
+    }
+
+    let guessNumber = [1,2,3,4,5,6,7,8,9,10];
+
+    if(cmd === `${prefix}`+'guess'+'_'+`${guessNumber}`){
+        var botGuessNumber = getRandomInt4();
+        if(guessNumber === botGuessNumber){
+            return message.reply("Correct.");
+        }   
+        else {
+            return message.reply("Incorrect.");
+        } 
     }
 })
 
