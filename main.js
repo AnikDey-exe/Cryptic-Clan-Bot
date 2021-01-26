@@ -126,11 +126,46 @@ bot.on("message", async message => {
         return message.reply("You have robbed the bank!");
     }
 
-    let guessNumber = getRandomInt4();
+    let guessNumber1 = 1;
+    let guessNumber2 = 2;
+    let guessNumber3 = 3;
+    let guessNumber4 = 4;
+    let guessNumber5 = 5;
 
-    if(cmd === `${prefix}`+'guess'+'_'+`${guessNumber}`){
+
+    if(cmd === `${prefix}`+'guess'+'_'+`${guessNumber1}`){
         var botGuessNumber = getRandomInt4();
-        if(guessNumber === botGuessNumber){
+        if(guessNumber1 === botGuessNumber){
+            return message.reply("Correct.");
+        }   
+        else {
+            return message.reply("Incorrect.");
+        } 
+    }
+
+    if(cmd === `${prefix}`+'guess'+'_'+`${guessNumber2}`){
+        var botGuessNumber = getRandomInt4();
+        if(guessNumber2 === botGuessNumber){
+            return message.reply("Correct.");
+        }   
+        else {
+            return message.reply("Incorrect.");
+        } 
+    }
+
+    if(cmd === `${prefix}`+'guess'+'_'+`${guessNumber3}`){
+        var botGuessNumber = getRandomInt4();
+        if(guessNumber3 === botGuessNumber){
+            return message.reply("Correct.");
+        }   
+        else {
+            return message.reply("Incorrect.");
+        } 
+    }
+
+    if(cmd === `${prefix}`+'guess'+'_'+`${guessNumber4}`){
+        var botGuessNumber = getRandomInt4();
+        if(guessNumber4 === botGuessNumber){
             return message.reply("Correct.");
         }   
         else {
