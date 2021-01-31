@@ -8,9 +8,9 @@ bot.on("ready", async () => {
     bot.user.setPresence({
         status: 'online',
         activity: {
-            name: 'with depression',
+            name: 'in development',
             type: 'STREAMING',
-            url: 'https://www.twitch.tv/monstercat'
+            url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
         }
     })
     console.log('Cryptic Clan bot is online!');
