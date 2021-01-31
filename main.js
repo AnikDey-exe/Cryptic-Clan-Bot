@@ -15,7 +15,7 @@ bot.on("guildMemberAdd", member => {
 
 
 bot.on("guildMemberRemove", member => {
-    const byeChannel = member.guild.channels.cache.find(channel => channel.name === 'member-join-log');
+    const byeChannel = member.guild.channels.cache.find(channel => channel.name === '📄│join-and-leave-log');
     byeChannel.send(`Goodbye! ${member}`);
 })
 
