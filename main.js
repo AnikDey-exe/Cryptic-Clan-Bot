@@ -190,10 +190,10 @@ bot.on("message", async message => {
         } 
     }
 
-    let person = msg.guild.member(msg.mentions.users.first() || msg.guild.members.fetch(args[1]))
+    let person = message.guild.member(message.mentions.users.first() || message.guild.members.fetch(args[1]))
 
     if(cmd === `${prefix}`+'welcome'+`${person.user}`) {
-        return msg.channel.send(`Welcome @${person.user}`);
+        return message.channel.send(`Welcome @${person.user}`);
     }
 })
 
