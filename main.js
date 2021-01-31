@@ -17,7 +17,7 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd", member => {
-        const channel = member.guild.channels.cache.find((ch) => ch.name === '📄│join-and-leave-log');
+        const channel = member.guild.channels.cache.find((ch) => ch.name === '💭│suggestions');
         if (!channel) {
           console.log("no channel");
           return;
@@ -27,7 +27,7 @@ bot.on("guildMemberAdd", member => {
 
 
 bot.on("guildMemberRemove", member => {
-    const byeChannel = member.guild.channels.cache.find(channel => channel.name === '📄│join-and-leave-log');
+    const byeChannel = member.guild.channels.cache.find(channel => channel.name === '💭│suggestions');
     byeChannel.send(`Goodbye! ${member}`);
 })
 
