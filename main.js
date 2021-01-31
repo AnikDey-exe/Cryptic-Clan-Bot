@@ -17,7 +17,7 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd", member => {
-        const channel = member.guild.channels.cache.find((ch) => ch.id === '756159066564460545');
+        const channel = member.guild.channels.cache.find((ch) => ch.id === 756159066564460545);
         if (!channel) {
           console.log("no channel");
           return;
@@ -185,6 +185,10 @@ bot.on("message", async message => {
         else {
             return message.reply("Incorrect.");
         } 
+    }
+
+    if(cmd === `${prefix}`+'welcome'+`${member}`) {
+        return message.channel.send('Welcome'+`${member}`);
     }
 })
 
