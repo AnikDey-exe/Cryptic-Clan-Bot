@@ -17,7 +17,7 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd", member => {
-        const channel = member.guild.channels.find(ch => ch.name === '💭│suggestions');
+        const channel = member.guild.channels.find(channel => channel.name === '💭│suggestions');
         if (!channel) return;
         channel.send(`Welcome to the server, ${member}!`);
 });
@@ -27,6 +27,7 @@ bot.on("guildMemberRemove", member => {
     const byeChannel = member.guild.channels.cache.find(channel => channel.name === '💭│suggestions');
     byeChannel.send(`Goodbye! ${member}`);
 })
+
 
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
