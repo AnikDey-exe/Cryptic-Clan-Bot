@@ -17,7 +17,7 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd", member => {
-        const channel = member.guild.channels.cache.collection.get((ch) => ch.id === '756159066564460545');
+        const channel = member.guild.channels.cache.Collection.get((ch) => ch.id === '756159066564460545');
         if (!channel) {
           console.log("no channel");
           return;
@@ -187,10 +187,10 @@ bot.on("message", async message => {
         } 
     }
 
-    let member = user.member;
+    let person = message.guild.member(message.mentions.users.first() || message.guild.members.fetch(args[1]))
 
-    if(cmd === `${prefix}`+'welcome'+`${member}`) {
-        return message.channel.send('Welcome'+`${member}`);
+    if(cmd === `${prefix}`+'welcome'+`${person.user.tag}`) {
+        return message.channel.send(`Welcome @${person.user.tag}`);
     }
 })
 
