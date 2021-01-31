@@ -17,14 +17,8 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd", member => {
-        const channel = member.guild.channels.cache.find((ch) => ch.name === '💭│suggestions');
-        if (!channel) {
-          console.log("no channel");
-          return;
-        }
-        else {
-            console.log("channel found");
-        }
+        const channel = member.guild.channels.find(ch => ch.name === '💭│suggestions');
+        if (!channel) return;
         channel.send(`Welcome to the server, ${member}!`);
 });
 
