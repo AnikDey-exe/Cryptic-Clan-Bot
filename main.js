@@ -6,12 +6,13 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.on("ready", async () => {
     bot.user.setStatus('available')
     bot.user.setPresence({
-        game: {
-            name: 'in development',
-            type: "STREAMING",
-            url: "https://stackoverflow.com"
+        status: 'online',
+        activity: {
+            name: 'with depression',
+            type: 'STREAMING',
+            url: 'https://www.twitch.tv/monstercat'
         }
-    });
+    })
     console.log('Cryptic Clan bot is online!');
 })
 
