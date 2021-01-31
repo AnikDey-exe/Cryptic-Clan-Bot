@@ -17,9 +17,12 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd", member => {
-    const welcomeChannel = member.guild.channels.cache.get('756159066564460545');
-
-    welcomeChannel.send('Welcome!');
+        const channel = member.guild.channels.cache.find((ch) => ch.id === '756159066564460545');
+        if (!channel) {
+          console.log("no channel");
+          return;
+        }
+        channel.send(`Welcome to the server, ${member}!`);
 });
 
 
