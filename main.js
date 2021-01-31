@@ -3,7 +3,7 @@ const botsettings = require('./botsettings.json');
 
 const bot = new Discord.Client({disableEveryone: true});
 
-bot.on('ready', () => {
+bot.on("ready", async () => {
     bot.user.setStatus('available')
     bot.user.setPresence({
         game: {
@@ -12,9 +12,6 @@ bot.on('ready', () => {
             url: "https://stackoverflow.com"
         }
     });
-});
-
-bot.on("ready", async () => {
     console.log('Cryptic Clan bot is online!');
 })
 
