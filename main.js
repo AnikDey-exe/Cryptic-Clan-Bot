@@ -17,7 +17,7 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd", member => {
-        const channel = member.guild.channels.cache.Collection.get((ch) => ch.id === '756159066564460545');
+        const channel = member.guild.channels.cache.find((ch) => ch.name === '📄│join-and-leave-log');
         if (!channel) {
           console.log("no channel");
           return;
