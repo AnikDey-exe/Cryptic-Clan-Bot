@@ -22,6 +22,9 @@ bot.on("guildMemberAdd", member => {
           console.log("no channel");
           return;
         }
+        else {
+            console.log("channel found");
+        }
         channel.send(`Welcome to the server, ${member}!`);
 });
 
