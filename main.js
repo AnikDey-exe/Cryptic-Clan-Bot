@@ -30,7 +30,7 @@ bot.on("guildMemberRemove", member => {
 
 let censor = "[Sorry, I Swear]";
 
-bot.on("message", message => {
+bot.on("message", async message => {
     let edit = message.content.replace(/asshole/gi, censor);
     message.delete();
     message.channel.send(`${message.author.username}: ${edit}`);
