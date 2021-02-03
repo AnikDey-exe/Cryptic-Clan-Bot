@@ -40,7 +40,10 @@ bot.on('message', message => {
     if(message.content.toLowerCase().includes("asshole")){
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
-        message.reply("No NSFW words!");
+        message.channel.send({embed: {
+            color: 3447003,
+            description: `${message.author.username} has been warned for: NSFW.`
+          }});
     }
 
     if(message.content.toLowerCase().includes("kkk")){
