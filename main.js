@@ -201,7 +201,7 @@ bot.on("message", async message => {
 
     if(cmd === 'bitch') {
         warns = warns + 1;
-        return message.reply("Whoa buddy, don't use those words here, we are family friendly! Warns: "+{$warns}+".")
+        return message.reply("Whoa buddy, don't use those words here, we are family friendly! Warns: "+warns+".")
     }
 
     if(message.content === '--bitch') {
