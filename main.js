@@ -37,7 +37,7 @@ let censor = "[Sorry, I Swear]";
 })*/
 
 bot.on('message', message => {
-    message.edit(message.content.replace(/asshole/gi, "[I'm stupid because I swear]"))
+    message.delete(message.content.replace(/asshole/gi, "[I'm stupid because I swear]"))
        .then(msg => console.log(`Updated the content of a message from ${msg.author}`))
        .catch(console.error);
 });
