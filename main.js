@@ -204,7 +204,7 @@ bot.on("message", async message => {
         return message.reply("Whoa buddy, don't use those words here, we are family friendly! Warns: "+warns+".")
     }      
 
-    if(message.content === '--bitch') {
+    if(message.content === 'bitch') {
         return message.reply("Whoa buddy, don't use those words here, we are family friendly!");
     }
 
