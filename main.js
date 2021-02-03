@@ -39,6 +39,7 @@ let censor = "[Sorry, I Swear]";
 bot.on('message', message => {
     if(message.content.toLowerCase().includes("asshole")){
         message.delete();
+        message.reply("No NSFW words!");
     }
     /*message.delete(message.content.replace(/asshole/gi, "[I'm stupid because I swear]"))
        .then(msg => console.log(`Updated the content of a message from ${msg.author}`))
