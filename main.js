@@ -37,7 +37,7 @@ let censor = "[Sorry, I Swear]";
 })*/
 
 bot.on('message', message => {
-    if(message.content === '--asshole'){
+    if(message.content.toLowerCase().includes("asshole")){
         message.delete();
     }
     /*message.delete(message.content.replace(/asshole/gi, "[I'm stupid because I swear]"))
