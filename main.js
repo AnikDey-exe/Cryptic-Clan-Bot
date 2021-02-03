@@ -30,12 +30,11 @@ bot.on("guildMemberRemove", member => {
 
 let censor = "[Sorry, I Swear]";
 
-bot.on("message", async message => {
+/*bot.on("message", async message => {
     let edit = message.content.replace(/asshole/gi, censor);
     message.delete();
     message.channel.send(`${message.author.username}: ${edit}`);
-})
-
+})*/
 
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
@@ -197,7 +196,17 @@ bot.on("message", async message => {
         return message.channel.send("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     }
 
-  
+    
+    let warns = 0;
+
+    if(cmd === 'bitch') {
+        warns = warns + 1;
+        return message.reply("Whoa buddy, don't use those words here, we are family friendly! Warns: "+warns+".")
+    }      
+
+    if(message.content === '--bitch') {
+        return message.reply("Whoa buddy, don't use those words here, we are family friendly!");
+    }
 
 })
 
