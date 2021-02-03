@@ -41,6 +41,46 @@ bot.on('message', message => {
         message.delete();
         message.reply("No NSFW words!");
     }
+
+    if(message.content.toLowerCase().includes("kkk")){
+        message.delete();
+        message.reply("No NSFW words!");
+    }
+
+    if(message.content.toLowerCase().includes("nigga")){
+        message.delete();
+        message.reply("No NSFW words!");
+    }
+
+    if(message.content.toLowerCase().includes("nigger")){
+        message.delete();
+        message.reply("No NSFW words!");
+    }
+
+    if(message.content.toLowerCase().includes("dick")){
+        message.delete();
+        message.reply("No NSFW words!");
+    }
+
+    if(message.content.toLowerCase().includes("bitch")){
+        message.delete();
+        message.reply("No NSFW words!");
+    }
+
+    if(message.content.toLowerCase().includes("shit")){
+        message.delete();
+        message.reply("No NSFW words!");
+    }
+
+    if(message.content.toLowerCase().includes("cunt")){
+        message.delete();
+        message.reply("No NSFW words!");
+    }
+
+    if(message.content.toLowerCase().includes("cum")){
+        message.delete();
+        message.reply("No NSFW words!");
+    }
     /*message.delete(message.content.replace(/asshole/gi, "[I'm stupid because I swear]"))
        .then(msg => console.log(`Updated the content of a message from ${msg.author}`))
        .catch(console.error);*/
