@@ -8,8 +8,8 @@ bot.on("ready", async () => {
     bot.user.setPresence({
         status: 'online',
         activity: {
-            name: 'in development',
-            type: 'STREAMING',
+            name: 'currently in development',
+            type: 'PLAYING',
             url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
         }
     })
@@ -185,11 +185,14 @@ bot.on("message", async message => {
         } 
     }
 
-    let person = message.guild.member(message.mentions.users.first() || message.guild.members.fetch(args[1]))
-
-    if(cmd === `${prefix}`+'welcome'+`${person.user}`) {
-        return message.channel.send(`Welcome @${person.user}`);
+    if(cmd === `${prefix}`+'rickroll') {
+        return message.channel.send("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     }
+
+    if(cmd === 'bitch') {
+        return message.reply("Whoa buddy, don't use those words here, we are family friendly!")
+    }
+
 })
 
 function getRandomInt1(min, max) {
