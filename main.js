@@ -37,8 +37,8 @@ let censor = "[Sorry, I Swear]";
 })*/
 
 bot.on('message', message => {
-    let mutedRole= message.member.guild.roles.cache.find(role => role.name === "Muted");
-    let member = message.member;
+    //let mutedRole= message.member.guild.roles.cache.find(role => role.name === "Muted");
+    //let member = message.member;
     if(message.content.toLowerCase().includes("asshole")){
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
