@@ -36,6 +36,12 @@ let censor = "[Sorry, I Swear]";
     message.channel.send(`${message.author.username}: ${edit}`);
 })*/
 
+bot.on('message', message => {
+    message.edit(message.content.replace(/asshole/gi, "[I'm stupid because I swear]"))
+       .then(msg => console.log(`Updated the content of a message from ${msg.author}`))
+       .catch(console.error);
+});
+
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
 
