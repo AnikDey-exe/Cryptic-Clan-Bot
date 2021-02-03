@@ -41,9 +41,17 @@ bot.on('message', message => {
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
         message.channel.send({embed: {
+            author: {
+                name: "Cryptic Clan Bot",
+            },
+            title: "Warn",
             color: 3447003,
-            description: `${message.author.username} has been warned for: NSFW.`
-          }});
+            description: `${message.author.username} has been warned for: NSFW.`,
+            timestamp: new Date(),
+            footer: {
+              text: "© Cryptic Clan Moderation"
+            }
+        }});
     }
 
     if(message.content.toLowerCase().includes("kkk")){
@@ -59,6 +67,7 @@ bot.on('message', message => {
     if(message.content.toLowerCase().includes("nigger")){
         message.delete();
         message.reply("No NSFW words!");
+        message.author.kick();
         message.channel.type === (`"dm"`) + message.author.send(`"Do not say that at all!"`);
     }
 
@@ -87,7 +96,7 @@ bot.on('message', message => {
         message.reply("No NSFW words!");
     }
 
-    if(message.content.includes("discord.gg/") && message.channel.name !== "🎥│self-promotion"){
+    if(message.content.includes("discord.gg/") && message.channel.name !== "🎥│self-promotion" && message.channel.name !== "🤝│partners"){
         message.delete();
         message.reply("Only advertise your server in #🎥│self-promotion. No advertising here!");
     }
