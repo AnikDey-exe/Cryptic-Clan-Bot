@@ -37,7 +37,8 @@ let censor = "[Sorry, I Swear]";
 })*/
 
 bot.on('message', message => {
-    var mutedRole= message.member.guild.roles.cache.find(role => role.name === "Muted");
+    let mutedRole= message.member.guild.roles.cache.find(role => role.name === "Muted");
+    let member = message.author();
     if(message.content.toLowerCase().includes("asshole")){
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
@@ -53,7 +54,7 @@ bot.on('message', message => {
               text: "© Cryptic Clan Moderation"
             }
         }});
-        message.author.roles.add(mutedRole);
+        member.roles.add(mutedRole);
     }
 
     if(message.content.toLowerCase().includes("kkk")){
