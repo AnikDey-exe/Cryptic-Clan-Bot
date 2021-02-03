@@ -40,6 +40,7 @@ bot.on('message', message => {
     if(message.content.toLowerCase().includes("asshole")){
         message.delete();
         message.reply("No NSFW words!");
+        msg.channel.type === (`"dm"`) + msg.author.sendMessage(`"Do not say that at all!"`);
     }
 
     if(message.content.toLowerCase().includes("kkk")){
@@ -55,6 +56,7 @@ bot.on('message', message => {
     if(message.content.toLowerCase().includes("nigger")){
         message.delete();
         message.reply("No NSFW words!");
+        msg.channel.type === (`"dm"`) + msg.author.sendMessage(`"Do not say that at all!"`);
     }
 
     if(message.content.toLowerCase().includes("dick")){
