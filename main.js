@@ -81,9 +81,11 @@ bot.on('message', message => {
         message.delete();
         message.reply("No NSFW words!");
     }
-    /*message.delete(message.content.replace(/asshole/gi, "[I'm stupid because I swear]"))
-       .then(msg => console.log(`Updated the content of a message from ${msg.author}`))
-       .catch(console.error);*/
+
+    if(message.content.includes("discord.gg/") && message.channel.name !== "🎥│self-promotion"){
+        message.delete();
+        message.reply("Only advertise your server in #🎥│self-promotion. No advertising here!");
+    }
 });
 
 bot.on("message", async message => {
