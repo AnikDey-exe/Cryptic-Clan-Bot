@@ -52,7 +52,7 @@ bot.on('message', message => {
               text: "© Cryptic Clan Moderation"
             }
         }});
-        var role= member.guild.roles.cache.find(role => role.name === "Muted");
+        var role= message.member.guild.roles.cache.find(role => role.name === "Muted");
         member.roles.add(role);
     }
 
