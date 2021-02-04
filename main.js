@@ -57,45 +57,140 @@ bot.on('message', message => {
     }
 
     if(message.content.toLowerCase().includes("kkk")){
+        message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
-        message.reply("No NSFW words!");
+        message.channel.send({embed: {
+            author: {
+                name: "Cryptic Clan Bot",
+            },
+            title: "Warn",
+            color: 3447003,
+            description: `${message.author.username} has been warned for: NSFW.`,
+            timestamp: new Date(),
+            footer: {
+              text: "© Cryptic Clan Moderation"
+            }
+        }});
     }
 
     if(message.content.toLowerCase().includes("nigga")){
+        message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
-        message.reply("No NSFW words!");
+        message.channel.send({embed: {
+            author: {
+                name: "Cryptic Clan Bot",
+            },
+            title: "Warn",
+            color: 3447003,
+            description: `${message.author.username} has been warned for: NSFW.`,
+            timestamp: new Date(),
+            footer: {
+              text: "© Cryptic Clan Moderation"
+            }
+        }});
     }
 
     if(message.content.toLowerCase().includes("nigger")){
+        message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
-        message.reply("No NSFW words!");
+        message.channel.send({embed: {
+            author: {
+                name: "Cryptic Clan Bot",
+            },
+            title: "Warn",
+            color: 3447003,
+            description: `${message.author.username} has been warned for: NSFW.`,
+            timestamp: new Date(),
+            footer: {
+              text: "© Cryptic Clan Moderation"
+            }
+        }});
         message.author.kick();
-        message.channel.type === (`"dm"`) + message.author.send(`"Do not say that at all!"`);
     }
 
     if(message.content.toLowerCase().includes("dick")){
+        message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
-        message.reply("No NSFW words!");
+        message.channel.send({embed: {
+            author: {
+                name: "Cryptic Clan Bot",
+            },
+            title: "Warn",
+            color: 3447003,
+            description: `${message.author.username} has been warned for: NSFW.`,
+            timestamp: new Date(),
+            footer: {
+              text: "© Cryptic Clan Moderation"
+            }
+        }});
     }
 
     if(message.content.toLowerCase().includes("bitch")){
+        message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
-        message.reply("No NSFW words!");
+        message.channel.send({embed: {
+            author: {
+                name: "Cryptic Clan Bot",
+            },
+            title: "Warn",
+            color: 3447003,
+            description: `${message.author.username} has been warned for: NSFW.`,
+            timestamp: new Date(),
+            footer: {
+              text: "© Cryptic Clan Moderation"
+            }
+        }});
     }
 
     if(message.content.toLowerCase().includes("shit")){
+        message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
-        message.reply("No NSFW words!");
+        message.channel.send({embed: {
+            author: {
+                name: "Cryptic Clan Bot",
+            },
+            title: "Warn",
+            color: 3447003,
+            description: `${message.author.username} has been warned for: NSFW.`,
+            timestamp: new Date(),
+            footer: {
+              text: "© Cryptic Clan Moderation"
+            }
+        }});
     }
 
     if(message.content.toLowerCase().includes("cunt")){
+        message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
-        message.reply("No NSFW words!");
+        message.channel.send({embed: {
+            author: {
+                name: "Cryptic Clan Bot",
+            },
+            title: "Warn",
+            color: 3447003,
+            description: `${message.author.username} has been warned for: NSFW.`,
+            timestamp: new Date(),
+            footer: {
+              text: "© Cryptic Clan Moderation"
+            }
+        }});
     }
 
     if(message.content.toLowerCase().includes("cum")){
+        message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
-        message.reply("No NSFW words!");
+        message.channel.send({embed: {
+            author: {
+                name: "Cryptic Clan Bot",
+            },
+            title: "Warn",
+            color: 3447003,
+            description: `${message.author.username} has been warned for: NSFW.`,
+            timestamp: new Date(),
+            footer: {
+              text: "© Cryptic Clan Moderation"
+            }
+        }});
     }
 
     if(message.content.includes("discord.gg/") && message.channel.name !== "🎥│self-promotion" && message.channel.name !== "🤝│partners"){
@@ -266,16 +361,6 @@ bot.on("message", async message => {
 
     
     let warns = 0;
-
-    if(cmd === 'bitch') {
-        warns = warns + 1;
-        return message.reply("Whoa buddy, don't use those words here, we are family friendly! Warns: "+warns+".")
-    }      
-
-    if(message.content === 'bitch') {
-        return message.reply("Whoa buddy, don't use those words here, we are family friendly!");
-    }
-
 })
 
 function getRandomInt1(min, max) {
