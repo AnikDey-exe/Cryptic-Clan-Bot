@@ -49,7 +49,7 @@ bot.on('message', message => {
     if(message.content.toLowerCase().includes("everyone") &&   
     message.member.roles.cache.find(role => role.name !== "Administrator") || 
     message.member.roles.cache.find(role => role.name !== "Moderator")) {
-        message.channel.type === (`"dm"`) + message.author.send(`Do not mass mention!`);
+        //message.channel.type === (`"dm"`) + message.author.send(`Do not mass mention!`);
         message.delete();
         message.channel.send({embed: {
             author: {
