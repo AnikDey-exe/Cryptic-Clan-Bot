@@ -46,6 +46,25 @@ bot.on('message', message => {
     let memberRole = member.guild.roles.find("name", "Member");
     let staffRole = member.guild.roles.find("name", "Board of Directors");
 
+    if(message.content.toLowerCase().includes("everyone") &&   
+    message.member.roles.find(r => r.name !== "Administrator") || 
+    message.member.roles.find(r => rname !== "Moderator")) {
+        message.channel.type === (`"dm"`) + message.author.send(`Do not mass mention!`);
+        message.delete();
+        message.channel.send({embed: {
+            author: {
+                name: "Cryptic Clan Bot",
+            },
+            title: "Warn",
+            color: 3447003,
+            description: `${message.author.username} has been warned for: Mass Mention.`,
+            timestamp: new Date(),
+            footer: {
+              text: "© Cryptic Clan Moderation"
+            }
+        }});
+    }
+
     if(message.content.toLowerCase().includes("asshole")){
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
