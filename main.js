@@ -46,7 +46,7 @@ bot.on('message', message => {
     let memberRole = member.guild.roles.find("name", "Member");
     let staffRole = member.guild.roles.find("name", "Board of Directors");*/
 
-    if(message.content.toLowerCase().includes("everyone") &&   
+    /*if(message.content.toLowerCase().includes("everyone") &&   
     message.member.roles.cache.some(role => role.name !== "Administrator") || 
     message.member.roles.cache.some(role => role.name !== "Moderator")) {
         //message.channel.type === (`"dm"`) + message.author.send(`Do not mass mention!`);
@@ -63,7 +63,7 @@ bot.on('message', message => {
               text: "© Cryptic Clan Moderation"
             }
         }});
-    }
+    }*/
 
     if(message.content.toLowerCase().includes("asshole")){
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
