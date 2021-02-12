@@ -37,7 +37,7 @@ let censor = "[Sorry, I Swear]";
 })*/
 
 bot.on('message', message => {
-    let mutedRole= message.member.roles.cache.find(role => role.name === "Muted");
+    let mutedRole= message.member.guild.roles.cache.find(role => role.name === "Muted");
     //let member = message.member;
     /*let adminRole = member.guild.roles.find("name", "Administrator");
     let modRole = member.guild.roles.find("name", "Moderator");
@@ -80,7 +80,8 @@ bot.on('message', message => {
               text: "© Cryptic Clan Moderation"
             }
         }});
-        message.member.roles.add(mutedRole);
+        //message.member.roles.add(mutedRole);
+        message.guild.members.cache.get(message.author.id).roles.add(mutedRole);
     }
 
     if(message.content.toLowerCase().includes("kkk")){
