@@ -37,7 +37,7 @@ let censor = "[Sorry, I Swear]";
 })*/
 
 bot.on('message', message => {
-    let mutedRole= message.guild.roles.find(role => role.name === "Muted");
+    let mutedRole= message.guild.roles.some(role => role.name === "Muted");
     //let member = message.member;
     /*let adminRole = member.guild.roles.find("name", "Administrator");
     let modRole = member.guild.roles.find("name", "Moderator");
