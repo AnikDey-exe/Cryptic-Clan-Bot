@@ -80,7 +80,7 @@ bot.on('message', message => {
               text: "© Cryptic Clan Moderation"
             }
         }});
-        message.member.addRole(mutedRole);
+        message.member.roles.add(mutedRole);
     }
 
     if(message.content.toLowerCase().includes("kkk")){
