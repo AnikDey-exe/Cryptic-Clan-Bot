@@ -71,6 +71,22 @@ bot.on('message', message => {
         }});
     }*/
 
+    if(message.content.toLowerCase().includes("^verify") && message.channel.name === 'verify'){
+        if(!message.member.roles.cache.has(memberRole)){
+            message.guild.members.cache.get(message.author.id).roles.add(memberRole);
+            message.channel.type === (`"dm"`) + message.author.send(`You have been successfully verified!`);
+        } 
+        else if(message.member.roles.cache.has(memberRole)){
+            message.delete();
+            message.channel.type === (`"dm"`) + message.author.send(`You have been already verified silly!`);
+        }
+    }
+
+    if(!message.content.toLowerCase().includes("^verify") && message.channel.name === 'verify'){
+        message.delete();
+        message.channel.type === (`"dm"`) + message.author.send(`Use the verification channel for verification only! To be verified type '^verify'.`);
+    }
+
     if(message.content.toLowerCase().includes("asshole")){
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
