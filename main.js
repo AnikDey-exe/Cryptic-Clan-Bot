@@ -37,12 +37,12 @@ let censor = "[Sorry, I Swear]";
 })*/
 
 bot.on('message', message => {
-    let mutedRole= message.member.guild.roles.cache.find(role => role.name === "Muted");
+    let mutedRole= message.member.guild.roles.cache.get(role => role.name === "Muted");
     let adminRole= message.member.guild.roles.cache.find(role => role.name === "Administrator");
     let modRole= message.member.guild.roles.cache.find(role => role.name === "Moderator");
     let ownerRole= message.member.guild.roles.cache.find(role => role.name === "Owner");
     let founderRole= message.member.guild.roles.cache.find(role => role.name === "Founder");
-    let memberRole= message.member.guild.roles.cache.find(role => role.name === "Server Member");
+    let memberRole= message.member.guild.roles.cache.get(role => role.name === "Server Member");
     let staffRole= message.member.guild.roles.cache.find(role => role.name === "Board of Directors");
     //let member = message.member;
     /*let adminRole = member.guild.roles.find("name", "Administrator");
@@ -73,6 +73,7 @@ bot.on('message', message => {
 
     if(message.content.toLowerCase().includes("^verify") && message.channel.name === 'verify'){
         if(!message.member.roles.cache.has(memberRole)){
+            message.delete();
             message.guild.members.cache.get(message.author.id).roles.add(memberRole);
             message.channel.type === (`"dm"`) + message.author.send(`You have been successfully verified!`);
         } 
