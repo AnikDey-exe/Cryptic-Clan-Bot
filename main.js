@@ -38,6 +38,12 @@ let censor = "[Sorry, I Swear]";
 
 bot.on('message', message => {
     let mutedRole= message.member.guild.roles.cache.find(role => role.name === "Muted");
+    let adminRole= message.member.guild.roles.cache.find(role => role.name === "Administrator");
+    let modRole= message.member.guild.roles.cache.find(role => role.name === "Moderator");
+    let ownerRole= message.member.guild.roles.cache.find(role => role.name === "Owner");
+    let founderRole= message.member.guild.roles.cache.find(role => role.name === "Founder");
+    let memberRole= message.member.guild.roles.cache.find(role => role.name === "Server Member");
+    let staffRole= message.member.guild.roles.cache.find(role => role.name === "Board of Directors");
     //let member = message.member;
     /*let adminRole = member.guild.roles.find("name", "Administrator");
     let modRole = member.guild.roles.find("name", "Moderator");
@@ -81,7 +87,13 @@ bot.on('message', message => {
             }
         }});
         //message.member.roles.add(mutedRole);
-        message.guild.members.cache.get(message.author.id).roles.add(mutedRole);
+        if(!message.member.roles.cache.has(mutedRole)){
+            message.guild.members.cache.get(message.author.id).roles.add(mutedRole);
+        }
+
+        if(message.member.roles.cache.has(memberRole)){
+            message.guild.members.cache.get(message.author.id).roles.remove(memberRole);
+        }
     }
 
     if(message.content.toLowerCase().includes("kkk")){
@@ -385,6 +397,12 @@ bot.on("message", async message => {
 
     if(cmd === `${prefix}`+'rickroll') {
         return message.channel.send("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    }
+
+    if(cmd === `${prefix}`+'id') {
+        var userID = message.member.id;
+
+        return message.reply("Your Discord User ID is: "+userID+".");
     }
 
     
