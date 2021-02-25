@@ -37,6 +37,7 @@ let censor = "[Sorry, I Swear]";
 })*/
 
 bot.on('message', message => {
+    let delAmount;
     let mutedRole= message.member.guild.roles.cache.get(role => role.name === "Muted");
     let adminRole= message.member.guild.roles.cache.find(role => role.name === "Administrator");
     let modRole= message.member.guild.roles.cache.find(role => role.name === "Moderator");
@@ -421,7 +422,6 @@ bot.on("message", async message => {
 
         return message.reply("Your Discord User ID is: "+userID+".");
     }
-
     
     let warns = 0;
 })
