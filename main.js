@@ -38,13 +38,13 @@ let censor = "[Sorry, I Swear]";
 
 bot.on('message', message => {
     let delAmount;
-    let mutedRole= message.member.guild.roles.cache.find(role => role.name === "Muted");
+  /*  let mutedRole= message.member.guild.roles.cache.find(role => role.name === "Muted");
     let adminRole= message.member.guild.roles.cache.find(role => role.name === "Administrator");
     let modRole= message.member.guild.roles.cache.find(role => role.name === "Moderator");
     let ownerRole= message.member.guild.roles.cache.find(role => role.name === "Owner");
     let founderRole= message.member.guild.roles.cache.find(role => role.name === "Founder");
     let memberRole= message.member.guild.roles.cache.find(role => role.name === "Server Member");
-    let staffRole= message.member.guild.roles.cache.find(role => role.name === "Board of Directors");
+    let staffRole= message.member.guild.roles.cache.find(role => role.name === "Board of Directors"); */
     //let member = message.member;
     /*let adminRole = member.guild.roles.find("name", "Administrator");
     let modRole = member.guild.roles.find("name", "Moderator");
@@ -72,7 +72,7 @@ bot.on('message', message => {
         }});
     }*/
 
-    if(message.content.toLowerCase().includes("^verify") && message.channel.name === 'verify'){
+   /* if(message.content.toLowerCase().includes("^verify") && message.channel.name === 'verify'){
         if(!message.member.roles.cache.has(memberRole)){
             message.delete();
             message.guild.members.cache.get(message.author.id).roles.add(memberRole);
@@ -87,7 +87,7 @@ bot.on('message', message => {
     if(!message.content.toLowerCase().includes("^verify") && message.channel.name === 'verify'){
         message.delete();
         message.channel.type === (`"dm"`) + message.author.send(`Use the verification channel for verification only! To be verified type '^verify'.`);
-    }
+    }*/
 
     if(message.content.toLowerCase().includes("asshole")){
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
@@ -105,13 +105,13 @@ bot.on('message', message => {
             }
         }});
         //message.member.roles.add(mutedRole);
-        if(!message.member.roles.cache.has(mutedRole)){
+        /*if(!message.member.roles.cache.has(mutedRole)){
             message.guild.members.cache.get(message.author.id).roles.add(mutedRole);
         }
 
         if(message.member.roles.cache.has(memberRole)){
             message.guild.members.cache.get(message.author.id).roles.remove(memberRole);
-        }
+        }*/
     }
 
     if(message.content.toLowerCase().includes("kkk")){
