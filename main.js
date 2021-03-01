@@ -17,7 +17,7 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd",function(message) {
-    member.guild.channels.cache.get('756159066564460545').send('Welcome!');
+    member.guild.channels.get('756159066564460545').send('Welcome!');
 });
 
 
