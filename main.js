@@ -297,7 +297,7 @@ bot.on("message", async message => {
             description: "`help, ping, topic, life, rob(bank, museum), rich, gay, insult, start, heist, guess(1-5), rickroll, id`",
             timestamp: new Date(),
             footer: {
-              text: "© The Support Team"
+              text: "© The Support Team" 
             }
         }})
     }
@@ -435,11 +435,11 @@ bot.on("message", async message => {
     }
     
     let warns = 0;
-    let mentionUser = message.mentions.users.first();
+    /*let mentionUser = message.mentions.users.first();
 
     if(cmd === `${prefix}`+'whois'+'_'+`${mentionUser}`){
 
-    }
+    }*/
 })
 
 function getRandomInt1(min, max) {
