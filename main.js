@@ -50,6 +50,8 @@ bot.on('message', message => {
     let founderRole = member.guild.roles.find("name", "Founder");
     let memberRole = member.guild.roles.find("name", "Member");
     let staffRole = member.guild.roles.find("name", "Board of Directors");*/
+    let myRole = message.guild.roles.find(role => role.name === "Moderators");
+    
 
    /* if(message.content.toLowerCase().includes("everyone") &&   
     !message.member.roles.cache.some(role => role.name === "Administrator") || 
@@ -286,7 +288,18 @@ bot.on("message", async message => {
     }
 
     if(cmd === `${prefix}`+'help'){
-        return message.reply("Use ^ for the prefix. Try commands such as ping and topic!")
+        return message.reply({embed: {
+            author: {
+                name: "Cryptic Clan Bot"
+            },
+            title: "Commands",
+            color: 3447003,
+            description: "`help, ping, topic, life, rob(bank, museum), rich, gay, insult, start, heist, guess(1-5), rickroll, id`",
+            timestamp: new Date(),
+            footer: {
+              text: "© The Support Team"
+            }
+        }})
     }
 
     if(cmd === `${prefix}`+'life'){
@@ -422,6 +435,11 @@ bot.on("message", async message => {
     }
     
     let warns = 0;
+    let mentionUser = message.mentions.users.first();
+
+    if(cmd === `${prefix}`+'whois'+'_'+`${mentionUser}`){
+
+    }
 })
 
 function getRandomInt1(min, max) {
