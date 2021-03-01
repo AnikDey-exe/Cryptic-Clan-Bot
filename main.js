@@ -211,11 +211,11 @@ bot.on('message', message => {
             color: 3447003,
             description: `${message.author.username} has been warned for: NSFW.`,
             timestamp: new Date(),
-            footer: {
+            footer: { 
               text: "© Cryptic Clan Moderation"
             }
         }});
-    }
+    } 
 
     if(message.content.toLowerCase().includes("cunt")){
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
