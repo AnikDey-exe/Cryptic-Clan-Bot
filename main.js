@@ -17,14 +17,15 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd", member => {
-        const channel = member.guild.channels.find(channel => channel.name === '💭│suggestions');
-        if (!channel) return;
-        channel.send(`Welcome to the server, ${member}!`);
+    let generalChannelName = message.guild.channels.find(channel => channel.name === '📄│join-and-leave-log');
+    let generalChannel = generalChannel.id;
+  
+    generalChannel.send(`Welcome ${member.tag} to the server!`);
 });
 
 
 bot.on("guildMemberRemove", member => {
-    const byeChannel = member.guild.channels.cache.find(channel => channel.name === '💭│suggestions');
+    const byeChannel = member.guild.channels.cache.find(channel => channel.name === '📄│join-and-leave-log');
     byeChannel.send(`Goodbye! ${member}`);
 })
 
