@@ -50,7 +50,7 @@ bot.on('message', message => {
     let founderRole = member.guild.roles.find("name", "Founder");
     let memberRole = member.guild.roles.find("name", "Member");
     let staffRole = member.guild.roles.find("name", "Board of Directors");*/
-    let myRole = message.guild.roles.find(role => role.name === "Moderators");
+   // let myRole = message.guild.roles.find(role => role.name === "Moderators");
     
 
    /* if(message.content.toLowerCase().includes("everyone") &&   
