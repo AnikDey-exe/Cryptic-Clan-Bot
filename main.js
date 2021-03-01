@@ -16,11 +16,8 @@ bot.on("ready", async () => {
     console.log('Cryptic Clan bot is online!');
 })
 
-bot.on("guildMemberAdd", member => {
-    let generalChannelName = message.guild.channels.find(channel => channel.name === '📄│join-and-leave-log');
-    let generalChannel = generalChannel.id;
-  
-    generalChannel.send(`Welcome ${member.tag} to the server!`);
+bot.on("guildMemberAdd",function(message) {
+    member.guild.channels.cache.get('756159066564460545').send('Welcome!');
 });
 
 
