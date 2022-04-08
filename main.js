@@ -287,6 +287,25 @@ bot.on("message", async message => {
         return message.channel.send("Remember to stay on topic and don't post explicit content!")
     }
 
+    if(cmd === `${prefix}`+'poll') {
+        return message.channel.send({embed: {
+            author: {
+                name: 'Cryptic Clan Bot', 
+            },
+            title: "Poll",
+            color: 3447003,
+            description: "Option 1 🚗 \n Option 2 🚓"
+        }})
+        .then(function (message) {
+            message.react("👍");
+            message.react("👎");
+            message.pin();
+            message.delete();
+        }).catch(function() {
+            console.log("err")
+        });
+    }
+
     if(cmd === `${prefix}`+'help'){
         return message.reply({embed: {
             author: {
