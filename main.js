@@ -280,22 +280,30 @@ bot.on("message", async message => {
     }
 
     if(command === 'polls') {
-        message.delete();
-        return message.channel.send({embed: {
-            author: {
-                name: 'Cryptic Clan Bot', 
-            },
-            title: "Poll",
-            color: 3447003,
-            description: `${args[0]} \n ${args[1]}`
-        }})
-        .then(function (message) {
-            message.react("1️⃣");
-            message.react("2️⃣");
-            message.pin();
-        }).catch(function() {
-            console.log("err");
-        });
+        if (!args.length) {
+			return message.channel.send(`You didn't provide any arguments, ${message.author.username}!`);
+		}
+        else {
+            setTimeout(()=>{
+                message.delete();
+            }, 2000);
+    
+            return message.channel.send({embed: {
+                author: {
+                    name: 'Cryptic Clan Bot', 
+                },
+                title: "Poll",
+                color: 3447003,
+                description: `${args[0]} \n ${args[1]}`
+            }})
+            .then(function (message) {
+                message.react("1️⃣");
+                message.react("2️⃣");
+                message.pin();
+            }).catch(function() {
+                console.log("err");
+            });
+        }
     }
 
     if(cmd === `${prefix}`+'ping'){
