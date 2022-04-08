@@ -8,12 +8,16 @@ const mongoose = require('mongoose');
 mongoose.connect(botsettings.mongodbsrv, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    //useFindAndModify: false
+    useFindAndModify: false
 }).then(()=>{
     console.log('Connected to the database.')
 }).catch((err)=>{
     console.log(err);
-})
+});
+
+const profileModels = require('./models/profileSchema');
+
+module.exports = async(client, discord, member)
 
 bot.on("ready", async () => {
     bot.user.setStatus('available')
@@ -29,7 +33,15 @@ bot.on("ready", async () => {
 })
 
 bot.on("guildMemberAdd",function(message) {
-    member.guild.channels.get('756159066564460545').send('Welcome!');
+    const channel = member.guild.channels.cache.find(channel => channel.name === "welcome")
+    if (!channel) return;
+
+    const joinembed = new Discord.MessageEmbed()
+    .setTitle(`A new member just arrived!`)
+    .setDescription(`Welcome ${member} we hope you enjoy your stay here!`)
+    .setColor("#FF0000");
+
+    channel.send(joinembed);
 });
 
 
