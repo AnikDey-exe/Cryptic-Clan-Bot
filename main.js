@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const botsettings = require('./botsettings.json');
 
-const bot = new Discord.Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MEMBERS] });
+const bot = new Discord.Client();
 
 const mongoose = require('mongoose');
 
