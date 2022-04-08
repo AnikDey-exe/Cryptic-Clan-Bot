@@ -284,12 +284,12 @@ bot.on("message", async message => {
 			return message.channel.send(`You didn't provide any arguments, ${message.author.username}!`);
 		}
 
-        if(!args[3]) {
-            args[3] = '';
+        if(!args[2]) {
+            args[2] = '';
         }
 
-        if(!args[4]) {
-            args[4] = '';
+        if(!args[3]) {
+            args[3] = '';
         }
 
         else {
@@ -308,10 +308,10 @@ bot.on("message", async message => {
             .then(function (message) {
                 message.react("1️⃣");
                 message.react("2️⃣");
-                if(args[3]) {
+                if(args[2]) {
                     message.react("3️⃣");
                 }
-                if(args[4]) {
+                if(args[3]) {
                     message.react("4️⃣");
                 }
                 message.pin();
