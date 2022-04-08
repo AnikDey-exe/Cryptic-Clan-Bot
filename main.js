@@ -283,6 +283,15 @@ bot.on("message", async message => {
         if (!args.length) {
 			return message.channel.send(`You didn't provide any arguments, ${message.author.username}!`);
 		}
+
+        if(!args[3]) {
+            args[3] = '';
+        }
+
+        if(!args[4]) {
+            args[4] = '';
+        }
+
         else {
             setTimeout(()=>{
                 message.delete();
@@ -294,11 +303,17 @@ bot.on("message", async message => {
                 },
                 title: "Poll",
                 color: 3447003,
-                description: `${args[0]} \n ${args[1]}`
+                description: `1: ${args[0]} \n \n  2: ${args[1]} \n \n  3: ${args[2]} \n \n  4: ${args[3]}`
             }})
             .then(function (message) {
                 message.react("1️⃣");
                 message.react("2️⃣");
+                if(args[3]) {
+                    message.react("3️⃣");
+                }
+                if(args[4]) {
+                    message.react("4️⃣");
+                }
                 message.pin();
             }).catch(function() {
                 console.log("err");
