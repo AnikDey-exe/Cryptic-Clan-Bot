@@ -266,13 +266,15 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let arg = messageArray.slice(1);
 
-    let args = message.content.slice(prefix.length).trim().split(' ');
+    let args = message.content.slice(prefix.length).trim().split(/ +/);
     let command = args.shift().toLowerCase();
 
     if(command === 'args') {
         if (!args.length) {
 			return message.channel.send(`You didn't provide any arguments, ${message.author.username}!`);
-		}
+		} else if(args[0] === 'player') {
+            message.channel.send(`Player indeed ${message.author.name}`)
+        }
 
 		message.channel.send(`Command name: ${command}\nArguments: ${args}`);
     }
