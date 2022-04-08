@@ -3,6 +3,18 @@ const botsettings = require('./botsettings.json');
 
 const bot = new Discord.Client({disableEveryone: true});
 
+const mongoose = require('mongoose');
+
+mongoose.connect(botsettings.mongodbsrv, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    //useFindAndModify: false
+}).then(()=>{
+    console.log('Connected to the database.')
+}).catch((err)=>{
+    console.log(err);
+})
+
 bot.on("ready", async () => {
     bot.user.setStatus('available')
     bot.user.setPresence({
@@ -268,6 +280,8 @@ bot.on("message", async message => {
 
     let args = message.content.slice(prefix.length).trim().split(/ +/);
     let command = args.shift().toLowerCase();
+
+    let args2 = message.content.slice(prefix.length).trim().split(',');
 
     if(command === 'args') {
         if (!args.length) {

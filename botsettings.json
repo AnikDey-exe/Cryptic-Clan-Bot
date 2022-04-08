@@ -1,4 +1,5 @@
 {
     "prefix": "^",
-    "command": "topic"
+    "command": "topic",
+    "mongodbsrv": "mongodb+srv://AnikDey:awesomesavage21@discordbot.scfvd.mongodb.net/DiscordBot?retryWrites=true&w=majority"
 }
