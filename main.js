@@ -287,7 +287,8 @@ bot.on("message", async message => {
         return message.channel.send("Remember to stay on topic and don't post explicit content!")
     }
 
-    if(cmd === `${prefix}`+'poll') {
+    if(cmd === `${prefix}`+'poll opt1 opt 2') {
+        message.delete();
         return message.channel.send({embed: {
             author: {
                 name: 'Cryptic Clan Bot', 
