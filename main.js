@@ -282,17 +282,15 @@ bot.on("message", async message => {
     if(command === 'polls') {
         if (!args.length) {
 			return message.channel.send(`You didn't provide any arguments, ${message.author.username}!`);
-		}
+		} else {
+            if(!args[2]) {
+                args.push('');
+            }
+    
+            if(!args[3]) {
+                args.push('');
+            } 
 
-        if(!args[2]) {
-            args.push('');
-        }
-
-        if(!args[3]) {
-            args.push('');
-        }
-
-        else {
             setTimeout(()=>{
                 message.delete();
             }, 2000);
