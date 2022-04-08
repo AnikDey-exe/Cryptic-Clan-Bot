@@ -573,4 +573,4 @@ function getRandomInt4(min, max) {
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
 
-bot.login(process.env.token);
+bot.login('ODAwNDIyNjMxMDc2NjU5MjMx.YAR5qg.5CzZbSE1isCCyeFS0jLtzr7is7c');
