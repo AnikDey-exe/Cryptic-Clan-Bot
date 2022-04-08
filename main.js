@@ -284,13 +284,13 @@ bot.on("message", async message => {
 			return message.channel.send(`You didn't provide any arguments, ${message.author.username}!`);
 		}
 
-        // if(!args[2]) {
-        //     args[2] = '';
-        // }
+        if(!args[2]) {
+            args.push('');
+        }
 
-        // if(!args[3]) {
-        //     args[3] = '';
-        // }
+        if(!args[3]) {
+            args.push('');
+        }
 
         else {
             setTimeout(()=>{
