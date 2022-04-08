@@ -41,7 +41,7 @@ bot.on("guildMemberAdd", member => {
 
     channel.send(`Welcome  ${member}`);
 
-    module.exports = async(client, discord, member) => {
+    //module.exports = async(client, discord, member) => {
         let profile = await profileModel.create({
             userID: member.id,
             serverID: member.guild.id,
@@ -49,12 +49,12 @@ bot.on("guildMemberAdd", member => {
             bank: 0
         });
         profile.save();
-    }
+    //}
 });
 
 
 bot.on("guildMemberRemove", member => {
-    const byeChannel = member.guild.channels.cache.find(channel => channel.name === '📄│join-and-leave-log');
+    const byeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome');
     byeChannel.send(`Goodbye! ${member}`);
 })
 
