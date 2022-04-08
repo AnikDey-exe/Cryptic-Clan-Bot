@@ -269,7 +269,7 @@ bot.on("message", async message => {
     let args = message.content.slice(prefix.length).trim().split(' ');
     let command = args.shift().toLowerCase();
 
-    if(command === `${prefix}`+'args') {
+    if(command === 'args') {
         if (!args.length) {
 			return message.channel.send(`You didn't provide any arguments, ${message.author.username}!`);
 		}
