@@ -41,7 +41,7 @@ bot.on("guildMemberAdd", member => {
 
     channel.send(`Welcome  ${member}`);
 
-    //module.exports = async(client, discord, member) => {
+    module.exports = async(client, discord, member) => {
         let profile = await profileModel.create({
             userID: member.id,
             serverID: member.guild.id,
@@ -49,7 +49,7 @@ bot.on("guildMemberAdd", member => {
             bank: 0
         });
         profile.save();
-    //}
+    }
 });
 
 
