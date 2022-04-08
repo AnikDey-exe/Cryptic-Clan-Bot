@@ -300,7 +300,6 @@ bot.on("message", async message => {
             message.react("👍");
             message.react("👎");
             message.pin();
-            message.delete();
         }).catch(function() {
             console.log("err")
         });
