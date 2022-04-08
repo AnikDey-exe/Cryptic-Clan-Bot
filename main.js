@@ -258,9 +258,10 @@ bot.on('message', message => {
 });
 
 bot.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm" || !message.content.startsWith(prefix)) return;
-
     let prefix = botsettings.prefix;
+
+    if(message.author.bot || message.channel.type === "dm" || !message.content.startsWith(prefix)) return;
+   
     let messageArray = message.content.split(" ")
     let cmd = messageArray[0];
     let arg = messageArray.slice(1);
