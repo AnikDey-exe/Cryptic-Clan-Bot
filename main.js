@@ -15,9 +15,7 @@ mongoose.connect(botsettings.mongodbsrv, {
     console.log(err);
 });
 
-const profileModels = require('./models/profileSchema');
-
-module.exports = async(client, discord, member)
+const profileModel = require('./models/profileSchema');
 
 bot.on("ready", async () => {
     bot.user.setStatus('available')
@@ -42,6 +40,16 @@ bot.on("guildMemberAdd",function(message) {
     .setColor("#FF0000");
 
     channel.send(joinembed);
+
+    module.exports = async(client, discord, member) => {
+        let profile = await profileModel.create({
+            userID: member.id,
+            serverID: member.guild.id,
+            attros: 1000,
+            bank: 0
+        });
+        profile.save();
+    }
 });
 
 
