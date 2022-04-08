@@ -30,7 +30,7 @@ bot.on("ready", async () => {
     console.log('Cryptic Clan bot is online!');
 })
 
-bot.on("guildMemberAdd",function(message) {
+bot.on("guildMemberAdd", member => {
     const channel = member.guild.channels.cache.find(channel => channel.name === "welcome")
     if (!channel) return;
 
@@ -39,7 +39,7 @@ bot.on("guildMemberAdd",function(message) {
     .setDescription(`Welcome ${member} we hope you enjoy your stay here!`)
     .setColor("#FF0000");
 
-    channel.send(joinembed);
+    channel.send(`Welcome  ${member}`);
 
     module.exports = async(client, discord, member) => {
         let profile = await profileModel.create({
