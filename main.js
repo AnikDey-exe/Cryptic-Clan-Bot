@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 mongoose.connect(botsettings.mongodbsrv, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false
+   // useFindAndModify: false
 }).then(()=>{
     console.log('Connected to the database.')
 }).catch((err)=>{
