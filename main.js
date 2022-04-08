@@ -258,12 +258,23 @@ bot.on('message', message => {
 });
 
 bot.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm") return;
+    if(message.author.bot || message.channel.type === "dm" || !message.content.startsWith(prefix)) return;
 
     let prefix = botsettings.prefix;
     let messageArray = message.content.split(" ")
     let cmd = messageArray[0];
-    let args = messageArray.slice(1);
+    let arg = messageArray.slice(1);
+
+    let args = message.content.slice(prefix.length).trim().split(' ');
+    let command = args.shift().toLowerCase();
+
+    if(command === 'args') {
+        if (!args.length) {
+			return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+		}
+
+		message.channel.send(`Command name: ${command}\nArguments: ${args}`);
+    }
 
     if(cmd === `${prefix}`+'ping'){
         return message.reply("This message had a ping of something seconds")
@@ -298,11 +309,11 @@ bot.on("message", async message => {
             description: "Option 1 🚗 \n Option 2 🚓"
         }})
         .then(function (message) {
-            message.react("👍");
-            message.react("👎");
+            message.react("1️⃣");
+            message.react("2️⃣");
             message.pin();
         }).catch(function() {
-            console.log("err")
+            console.log("err");
         });
     }
 
@@ -336,7 +347,7 @@ bot.on("message", async message => {
         }
     }
 
-    if(cmd === `${prefix}`+'rob'+' '+'bank') {
+    if(cmd === `${prefix}`+'rob'+'_'+'bank') {
         var rand = getRandomInt1();
         var money = getRandomInt3();
         if(rand == 1){
