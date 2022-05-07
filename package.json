@@ -9,6 +9,7 @@
   "author": "Cryptic",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/voice": "^0.8.0",
     "discord.js": "^12.5.1",
     "mongoose": "^6.2.10"
   }

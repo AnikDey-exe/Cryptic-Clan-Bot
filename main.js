@@ -1,5 +1,13 @@
 const Discord = require('discord.js');
 const botsettings = require('./botsettings.json');
+const {joinVoiceChannel,
+	createAudioPlayer,
+	createAudioResource,
+	entersState,
+	StreamType,
+	AudioPlayerStatus,
+	VoiceConnectionStatus} = require('@discordjs/voice');
+const { createDiscordJSAdapter } = require('./adapter');
 
 const bot = new Discord.Client();
 
@@ -16,6 +24,25 @@ mongoose.connect(botsettings.mongodbsrv, {
 });
 
 const profileModel = require('./models/profileSchema');
+
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCrmv9wdWF-D2BCQqimpFCSwKVq3LTTMJI",
+//   authDomain: "cryptic-clan-bot.firebaseapp.com",
+//   databaseURL: "https://cryptic-clan-bot-default-rtdb.firebaseio.com",
+//   projectId: "cryptic-clan-bot",
+//   storageBucket: "cryptic-clan-bot.appspot.com",
+//   messagingSenderId: "1066483589941",
+//   appId: "1:1066483589941:web:2aefd3c31270ed44caa27c"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
 
 bot.on("ready", async () => {
     bot.user.setStatus('available')
@@ -68,6 +95,7 @@ let censor = "[Sorry, I Swear]";
 
 bot.on('message', message => {
     let delAmount;
+    if(message.author.bot || message.channel.type === "dm") return;
   /*  let mutedRole= message.member.guild.roles.cache.find(role => role.name === "Muted");
     let adminRole= message.member.guild.roles.cache.find(role => role.name === "Administrator");
     let modRole= message.member.guild.roles.cache.find(role => role.name === "Moderator");
@@ -313,9 +341,44 @@ bot.on("message", async message => {
 		message.channel.send(`Command name: ${command}\nArguments: ${args}`);
     }
 
+    if(command === 'pin') {
+        if(!args.length) {
+            return message.channel.send(`You didn't provide any message to pin, ${message.author.username}!`);
+        } else {
+            msg.channel.messages.fetch(args[0])
+            .then(message => bot.cache.get('CHANNEL ID').send(message.content))
+            .catch((err)=>{console.log(err)});
+        }
+    }
+
+    if(command === 'tweet') {
+        if(!args.length) {
+            return message.channel.send(`You didn't tweet anything, ${message.author.username}!`);
+        } else {
+            return message.channel.send({embed: {
+                author: {
+                    name: message.author.username, 
+                },
+                color: 3447003,
+                description: args,
+                timestamp: new Date(),
+                fields: [
+                    {
+                        name: 'Likes',
+                        value: getRandomInt(1000000)
+                    },
+                    {
+                        name: 'Retweets',
+                        value: getRandomInt(10000)
+                    }
+                ]
+            }})
+        }
+    }
+
     if(command === 'polls') {
         if (!args.length) {
-			return message.channel.send(`You didn't provide any arguments, ${message.author.username}!`);
+			return message.channel.send(`You didn't provide any options, ${message.author.username}!`);
 		} else {
             if(!args[2]) {
                 args.push('');
@@ -571,6 +634,11 @@ function getRandomInt4(min, max) {
     min = Math.ceil(1);
     max = Math.floor(11);
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
+function getRandomInt(multiplier) {
+    var randomInt = Math.floor(Math.random(0, 1) * multiplier);
+    return randomInt;
 }
 
 bot.login('ODAwNDIyNjMxMDc2NjU5MjMx.YAR5qg.5CzZbSE1isCCyeFS0jLtzr7is7c');
