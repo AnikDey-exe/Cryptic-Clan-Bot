@@ -345,7 +345,7 @@ bot.on("message", async message => {
         if(!args.length) {
             return message.channel.send(`You didn't provide any message to pin, ${message.author.username}!`);
         } else {
-            msg.channel.messages.fetch(args[0])
+            message.channel.messages.fetch(args[0])
             .then(message => bot.cache.get('972516136862240818').send(message.content))
             .catch((err)=>{console.log(err)});
         }
