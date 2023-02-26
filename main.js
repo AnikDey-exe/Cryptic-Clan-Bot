@@ -26,25 +26,6 @@ mongoose.connect(botsettings.mongodbsrv, {
 
 const profileModel = require('./models/profileSchema');
 
-// // Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
-
-// // Your web app's Firebase configuration
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCrmv9wdWF-D2BCQqimpFCSwKVq3LTTMJI",
-//   authDomain: "cryptic-clan-bot.firebaseapp.com",
-//   databaseURL: "https://cryptic-clan-bot-default-rtdb.firebaseio.com",
-//   projectId: "cryptic-clan-bot",
-//   storageBucket: "cryptic-clan-bot.appspot.com",
-//   messagingSenderId: "1066483589941",
-//   appId: "1:1066483589941:web:2aefd3c31270ed44caa27c"
-// };
-
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-
 bot.on("ready", async () => {
     bot.user.setStatus('available')
     bot.user.setPresence({
@@ -85,14 +66,6 @@ bot.on("guildMemberRemove", member => {
     const byeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome');
     byeChannel.send(`Goodbye! ${member}`);
 })
-
-let censor = "[Sorry, I Swear]";
-
-/*bot.on("message", async message => {
-    let edit = message.content.replace(/asshole/gi, censor);
-    message.delete();
-    message.channel.send(`${message.author.username}: ${edit}`);
-})*/
 
 bot.on('message', message => {
     let delAmount;
@@ -150,7 +123,7 @@ bot.on('message', message => {
          message.channel.type === (`"dm"`) + message.author.send(`Use the verification channel for verification only! To be verified type '^verify'.`);
      }*/
 
-    if (message.content.toLowerCase().includes("asshole")) {
+    if (message.content.toLowerCase().includes("PROFANITY")) {
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
         message.channel.send({
@@ -177,7 +150,7 @@ bot.on('message', message => {
         }*/
     }
 
-    if (message.content.toLowerCase().includes("kkk")) {
+    if (message.content.toLowerCase().includes("PROFANITY")) {
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
         message.channel.send({
@@ -196,7 +169,7 @@ bot.on('message', message => {
         });
     }
 
-    if (message.content.toLowerCase().includes("nigga")) {
+    if (message.content.toLowerCase().includes("PROFANITY")) {
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
         message.channel.send({
@@ -215,7 +188,7 @@ bot.on('message', message => {
         });
     }
 
-    if (message.content.toLowerCase().includes("nigger")) {
+    if (message.content.toLowerCase().includes("PROFANITY")) {
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
         message.channel.send({
@@ -232,29 +205,10 @@ bot.on('message', message => {
                 }
             }
         });
-        message.member.kick("Racial slur.");
+        message.member.kick("Offensive messages.");
     }
 
-    if (message.content.toLowerCase().includes("dick")) {
-        message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
-        message.delete();
-        message.channel.send({
-            embed: {
-                author: {
-                    name: "Cryptic Clan Bot",
-                },
-                title: "Warn",
-                color: 3447003,
-                description: `${message.author.username} has been warned for: NSFW.`,
-                timestamp: new Date(),
-                footer: {
-                    text: "© Cryptic Clan Moderation"
-                }
-            }
-        });
-    }
-
-    if (message.content.toLowerCase().includes("bitch")) {
+    if (message.content.toLowerCase().includes("PROFANITY")) {
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
         message.channel.send({
@@ -273,7 +227,7 @@ bot.on('message', message => {
         });
     }
 
-    if (message.content.toLowerCase().includes("shit")) {
+    if (message.content.toLowerCase().includes("PROFANITY")) {
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
         message.channel.send({
@@ -292,7 +246,7 @@ bot.on('message', message => {
         });
     }
 
-    if (message.content.toLowerCase().includes("cunt")) {
+    if (message.content.toLowerCase().includes("PROFANITY")) {
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
         message.channel.send({
@@ -311,7 +265,26 @@ bot.on('message', message => {
         });
     }
 
-    if (message.content.toLowerCase().includes("cum")) {
+    if (message.content.toLowerCase().includes("PROFANITY")) {
+        message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
+        message.delete();
+        message.channel.send({
+            embed: {
+                author: {
+                    name: "Cryptic Clan Bot",
+                },
+                title: "Warn",
+                color: 3447003,
+                description: `${message.author.username} has been warned for: NSFW.`,
+                timestamp: new Date(),
+                footer: {
+                    text: "© Cryptic Clan Moderation"
+                }
+            }
+        });
+    }
+
+    if (message.content.toLowerCase().includes("PROFANITY")) {
         message.channel.type === (`"dm"`) + message.author.send(`Do not say that phrase at all!`);
         message.delete();
         message.channel.send({
@@ -513,17 +486,6 @@ bot.on("message", async message => {
         return message.reply("We all live and death is always lurking nearby us. Treat everyday like the last day because you never know when fate will let you perish...");
     }
 
-    if (cmd === `${prefix}` + 'gay') {
-        var rand = getRandomInt1();
-        console.log(rand);
-        if (rand == 1) {
-            return message.reply("You are gay!");
-        }
-        else if (rand == 2) {
-            return message.reply("You are not gay!");
-        }
-    }
-
     if (cmd === `${prefix}` + 'rob' + '_' + 'bank') {
         var rand = getRandomInt1();
         var money = getRandomInt3();
@@ -678,4 +640,4 @@ function getRandomInt(multiplier) {
     return randomInt;
 }
 
-bot.login('ODAwNDIyNjMxMDc2NjU5MjMx.YAR5qg.5CzZbSE1isCCyeFS0jLtzr7is7c');
+bot.login('BOT_TOKEN');
